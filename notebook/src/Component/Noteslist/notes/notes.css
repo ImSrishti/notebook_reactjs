@@ -1,0 +1,10 @@
+.notes{
+    border: 1px solid rgb(181, 120, 235);
+    margin:15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+}

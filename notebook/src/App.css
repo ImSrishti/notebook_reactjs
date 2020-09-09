@@ -4,13 +4,25 @@
   display:flex;
   justify-content: center;
   align-content: center;
-  margin: 10px;
-  padding: 10px;
+  margin: 5px;
+  padding: 5px;
 }
 .note_body{
   display: flex;
   justify-content: center;
   align-content: center;
-  margin: 10px;
-  padding: 10px;
+  max-width: 1500px;
+  margin: 5px;
+  min-height: 500px;
+}
+
+
+.notestitle {
+  flex: 0.25;
+  background-color: rgb(235, 207, 235);
+}
+
+.noteslist{
+  flex:0.75;
+  background-color: rgb(221, 207, 233);
 }
