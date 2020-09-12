@@ -1,0 +1,40 @@
+.textarea{
+    height: 80%;
+    width: 100%;
+    border: none;
+    
+}
+.div_area{
+    width: 98%;
+}
+
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    float: right;
+    width: 17%;
+  }
+  
+  .button:hover {opacity: 1}
+
+  .form__field {
+    font-family: inherit;
+    width: 80%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: rgba(48, 48, 48, 0.658);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }

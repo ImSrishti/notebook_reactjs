@@ -17,7 +17,7 @@ export default function Category(props) {
             {props.categoryArr.map(
                 (topic, index) =>
                     <div key={index} className="topic">
-                 <Link to={"/notescategory/"+topic}> {topic} </Link>
+                 <Link to={"/notescategory/"+index}> {topic} </Link>
                     </div>
              ) }
             

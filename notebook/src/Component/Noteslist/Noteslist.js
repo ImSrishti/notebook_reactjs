@@ -1,10 +1,12 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import './noteslist.css'
-import {Switch,Route} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Notes from './notes/Notes'
+import TextArea from './notes/textArea/textArea'
 function Noteslist() {
-    const [notes, setnotes] = useState(['Welcome here on notes']);
-   
+
+   // const [notes, setnotes] = useState(['Welcome here on notes']);
+
     // const setTempData = (tempdata)=>{
     //     if(notes !== ''){
     //     const tempArray = [...notes];
@@ -16,8 +18,10 @@ function Noteslist() {
     // }
     return (
         <Switch>
-        <Route path="/notescategory/:id" children={<Notes />}></Route>
-         </Switch>
+            <Route path="/" exact children={<Notes />}></Route>
+            <Route path="/notescategory/:id" children={<Notes />}></Route>
+            <Route path="/textarea" children={<TextArea />}></Route>
+        </Switch>
     )
 }
 
