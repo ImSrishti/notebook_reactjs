@@ -1,7 +1,7 @@
-.noteslist2{
+.notetitlebox{
     display: flex;
     justify-content: center;
     align-content: center;
-    flex-wrap: wrap;
-   
+    border: 2px solid rgb(181, 120, 235);
+    padding :5px;
 }

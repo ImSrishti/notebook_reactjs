@@ -1,10 +1,14 @@
+.App{
+  margin:5px;
+}
+
 .header{
   max-width: 1500px;
-  background-color:rgb(231, 231, 94);
+  background-color:rgba(148, 180, 228, 0.555);
   display:flex;
   justify-content: center;
   align-content: center;
-  margin: 5px;
+
   padding: 5px;
 }
 .note_body{
@@ -12,7 +16,6 @@
   justify-content: center;
   align-content: center;
   max-width: 1500px;
-  margin: 5px;
   min-height: 500px;
 }
 
@@ -25,4 +28,5 @@
 .noteslist{
   flex:0.75;
   background-color: rgb(221, 207, 233);
+  display:flex;
 }
