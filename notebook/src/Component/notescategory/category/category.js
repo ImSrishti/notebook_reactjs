@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './category.css'
 import {Link} from "react-router-dom";
+
 export default function Category(props) {
     const [temptopic, settemptopic] = useState('')
+
     const changeTempTopic = () => {
         props.categoryData(temptopic)
     }

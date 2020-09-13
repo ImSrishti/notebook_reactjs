@@ -3,7 +3,11 @@ import {BrowserRouter as Router} from "react-router-dom";
 import './App.css';
 import NotesCategory from './Component/notescategory/notescategory';
 import Noteslist from './Component/Noteslist/Noteslist';
+
 function App() {
+  
+ 
+
   return (
     <Router>
     <div className="App">
