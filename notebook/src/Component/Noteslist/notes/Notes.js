@@ -2,7 +2,11 @@ import React, { useState } from 'react'
 import './notes.css'
 import {useParams,Link} from 'react-router-dom';
 
+import { connect } from "react-redux";
+import { getNoteList } from "../../../redux/selectors";
+
 let count =4;
+
 function Notes(props) {
     const [notes, setnotes] = useState(
          {
@@ -22,12 +26,21 @@ function Notes(props) {
            <Link to="/textarea" >Add note</Link>
         </div>
           { 
-        notes[temp].map(note => 
-            <div className="notes">{note}</div>
+        props.noteList.map(note => 
+            <div key={note} className="notes">{note}</div>
          ) }
         
         </div>
     )
 }
 
-export default Notes
+
+const mapStateToProps = state => {
+    const noteList = getNoteList(state);
+    return {noteList};
+};
+
+export default connect(
+    mapStateToProps,
+    null
+)(Notes);

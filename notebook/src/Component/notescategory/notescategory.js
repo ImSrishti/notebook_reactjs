@@ -1,44 +1,57 @@
 import React, { useState, useEffect } from 'react';
-import Category from './category/category';
+
 import database from '../../database/firebase'
 
-export default function Notescategory(props) {
+import { addNote,initialize } from '../../redux/actions'
+import { connect } from "react-redux";
+import { getNoteCategoryList } from "../../redux/selectors";
 
-    const [category, setcategory] = useState({});
-    const [categoryKeys, setcategoryKeys] = useState(['Welcome here']);
+function NotesCategory(props) {
 
+    const [categoryInput, setcategoryInput] = useState('');
 
     useEffect(() => {
         //database read
-        database.ref().once('value').then(function (snapshot) {
+        database.ref('notebook').once('value').then(function (snapshot) {
             const data = snapshot.val()
-            const category_array = Object.keys(data)
-
-            setcategory(data)
-            setcategoryKeys(category_array)
+            props.initialize(data)
         });
-    }, [])
+    },[])
 
-    const setTempData = (tempdata) => {
-        if (tempdata !== '') {
-            const tempArray = [...categoryKeys];
-            tempArray.push(tempdata)
-            setcategoryKeys(
-                tempArray
-            );
+    // const setTempData = async (tempdata) => {
+    //     if (tempdata !== '') {
+    //         const tempArray = [...categorykeys];
+    //         tempArray.push(tempdata)
+    //         setcategoryKeys(
+    //             tempArray
+    //         );
 
-            const temp = {[tempdata]:[]}
+    //         const temp = { "name": tempdata }
 
-            //database insert
-            database.ref('h').push(temp).then((x)=>{
-                console.log(x)
-            })
-
-        }
-    }
+    //         //database insert
+    //         database.ref('notebook').push(temp)
+    //     }
+    // }
+    
     return (
         <div className="notescategory1" >
-            <Category categoryArr={categoryKeys} categoryData={setTempData} />
+            <div>
+                <input value={categoryInput} onChange={e=>setcategoryInput(e.target.value)}/>
+                <button onClick={e=>props.addNote(categoryInput)}>Add</button>
+            </div>
+            <ul>
+                { props.noteCategoryList.map(x =>(<li key={x}>{x}</li>))}
+            </ul>
         </div>
     );
 }
+
+const mapStateToProps = state => {
+    const noteCategoryList = getNoteCategoryList(state);
+    return {noteCategoryList};
+};
+
+export default connect(
+    mapStateToProps,
+    { addNote,initialize }
+)(NotesCategory);

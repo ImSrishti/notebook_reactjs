@@ -1,13 +1,10 @@
 import React from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
 import './App.css';
-import NotesCategory from './Component/notescategory/notescategory';
+import NotesCategory from './Component/NotesCategory/NotesCategory';
 import Noteslist from './Component/Noteslist/Noteslist';
 
-function App() {
-  
- 
-
+function App(props) {
   return (
     <Router>
     <div className="App">

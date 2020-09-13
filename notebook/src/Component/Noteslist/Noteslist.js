@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './noteslist.css'
 import { Switch, Route } from "react-router-dom";
-import Notes from './notes/Notes'
-import TextArea from './notes/textArea/textArea'
+import Notes from './Notes/Notes'
+import TextArea from './Notes/textArea/textArea'
+
+
 function Noteslist() {
 
    // const [notes, setnotes] = useState(['Welcome here on notes']);

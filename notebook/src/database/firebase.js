@@ -14,11 +14,15 @@ const firebaseConfig = {
   storageBucket: "notebook-11.appspot.com",
   messagingSenderId: "83923075301",
   appId: "1:83923075301:web:5c87a38bf290f94e8e540c"
-  };
-  
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+};
 
-  const database = firebase.database();
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-  export { database as default }
+const database = firebase.database();
+
+// database.ref('notebook').push({"temp":78}).then((x) => {
+//   console.log(x)
+// })
+
+export { database as default }
