@@ -19,12 +19,13 @@ export default function (state = initialState, action) {
       const temp = {"name":content,"notelist":['']}
       
       database.ref('notebook').push(temp)
-      
-      debugger
+     
       return {
         ...state,
-        data: {...state.data,temp}
+        data: {temp,...state.data},
+       
       };
+     
     }
     default:
       return state;

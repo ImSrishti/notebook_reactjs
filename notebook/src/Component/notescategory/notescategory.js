@@ -5,6 +5,7 @@ import database from '../../database/firebase'
 import { addNote,initialize } from '../../redux/actions'
 import { connect } from "react-redux";
 import { getNoteCategoryList } from "../../redux/selectors";
+import { Link } from 'react-router-dom';
 
 function NotesCategory(props) {
 
@@ -34,13 +35,17 @@ function NotesCategory(props) {
     // }
     
     return (
-        <div className="notescategory1" >
+        <div>
             <div>
                 <input value={categoryInput} onChange={e=>setcategoryInput(e.target.value)}/>
                 <button onClick={e=>props.addNote(categoryInput)}>Add</button>
             </div>
             <ul>
-                { props.noteCategoryList.map(x =>(<li key={x}>{x}</li>))}
+                { props.noteCategoryList.map((x,i) =>(
+                <li key={i}>
+                    <Link to={'/'+ x}> {x}</Link>
+                </li>
+                ))}
             </ul>
         </div>
     );

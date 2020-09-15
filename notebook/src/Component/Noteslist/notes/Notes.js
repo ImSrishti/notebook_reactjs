@@ -1,23 +1,14 @@
 import React, { useState } from 'react'
-import './notes.css'
+import './Notes.css'
 import {useParams,Link} from 'react-router-dom';
 
 import { connect } from "react-redux";
 import { getNoteList } from "../../../redux/selectors";
 
-let count =4;
+
 
 function Notes(props) {
-    const [notes, setnotes] = useState(
-         {
-            0:['first note','second note','third note'],
-            1:['first note','halwa note'],
-            2:['pehla','nasha','pehla','khumar'],
-            3:['nya','pyar','hai','nya','intezar'],
-            [count]:[''],
-            
-        }
-    )
+    const [notes, setnotes] = useState('')
     let {id} = useParams();
     let temp = Number(id) ? Number(id) : 0;
     return ( 

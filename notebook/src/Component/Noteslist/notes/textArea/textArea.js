@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import './textarea.css'
+import './Textarea.css'
 function TextArea() {
     const [title, settitle] = useState('');
     const [content, setcontent] = useState('')

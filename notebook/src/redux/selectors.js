@@ -15,9 +15,8 @@ export const getNoteList = (state) => {
   let notesArray = []
   for(let a in state.notebook.data){
     if(state.notebook.data[a].name=="abc"){
-      notesArray = state.notebook.data[a].notelist
+      notesArray = state.notebook.data[a].notelist 
     }
   }
-  debugger
   return notesArray
 };

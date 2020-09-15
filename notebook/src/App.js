@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
 import './App.css';
-import NotesCategory from './Component/NotesCategory/NotesCategory';
+import NotesCategory from './Component/Notescategory/Notescategory';
 import Noteslist from './Component/Noteslist/Noteslist';
 
 function App(props) {

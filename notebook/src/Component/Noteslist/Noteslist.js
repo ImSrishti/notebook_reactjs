@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import './noteslist.css'
+import './Noteslist.css'
 import { Switch, Route } from "react-router-dom";
 import Notes from './Notes/Notes'
-import TextArea from './Notes/textArea/textArea'
+import TextArea from './Notes/TextArea/TextArea'
 
 
 function Noteslist() {
