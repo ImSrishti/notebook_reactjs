@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import database from '../../database/firebase'
 
-import { addNote,initialize } from '../../redux/actions'
+import { addCategory,initialize } from '../../redux/actions'
 import { connect } from "react-redux";
 import { getNoteCategoryList } from "../../redux/selectors";
 import { Link } from 'react-router-dom';
@@ -38,12 +38,12 @@ function NotesCategory(props) {
         <div>
             <div>
                 <input value={categoryInput} onChange={e=>setcategoryInput(e.target.value)}/>
-                <button onClick={e=>props.addNote(categoryInput)}>Add</button>
+                <button onClick={e=>props.addCategory(categoryInput)}>Add</button>
             </div>
             <ul>
                 { props.noteCategoryList.map((x,i) =>(
                 <li key={i}>
-                    <Link to={'/'+ x}> {x}</Link>
+                    <Link to={'/notescategory/'+ x}> {x}</Link>
                 </li>
                 ))}
             </ul>
@@ -58,5 +58,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { addNote,initialize }
+    { addCategory,initialize }
 )(NotesCategory);

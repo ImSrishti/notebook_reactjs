@@ -12,10 +12,13 @@ export const getNoteCategory = (state) => {
 
 export const getNoteList = (state) => {
   
-  let notesArray = []
+  let notesArray = {};
   for(let a in state.notebook.data){
-    if(state.notebook.data[a].name=="abc"){
-      notesArray = state.notebook.data[a].notelist 
+    debugger
+    notesArray = {
+      ...notesArray,
+      [state.notebook.data[a].name] : state.notebook.data[a].name.notelist
+      
     }
   }
   return notesArray

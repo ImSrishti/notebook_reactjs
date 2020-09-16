@@ -1,4 +1,4 @@
-import { ADD ,INIT } from "./actionTypes";
+import { ADDCATEGORY ,INIT, ADDNOTES, ADDNOTETITLE} from "./actionTypes";
 
 export const initialize = content => ({
   type: INIT,
@@ -7,9 +7,24 @@ export const initialize = content => ({
   }
 });
 
-export const addNote = content => ({
-  type: ADD,
+export const addCategory = content => ({
+  type: ADDCATEGORY,
   payload: {
     content
   }
 });
+
+export const addNoteTitle = content => ({
+  type: ADDNOTETITLE,
+  payload: {
+    content
+  }
+});
+
+export const addNotes = content => ({
+  type: ADDNOTES,
+  payload: {
+    content
+  }
+});
+

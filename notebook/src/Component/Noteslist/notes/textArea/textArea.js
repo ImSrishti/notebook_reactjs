@@ -1,10 +1,22 @@
 import React,{useState} from 'react'
 import './Textarea.css'
-function TextArea() {
+import { addNoteTitle } from '../../../../redux/actions'
+import { connect } from "react-redux";
+import { useParams } from 'react-router-dom';
+
+
+function TextArea(props) {
+    let {tempid} = useParams();
+
     const [title, settitle] = useState('');
     const [content, setcontent] = useState('')
     const saveContents = () =>{
+        debugger
+        let tempnote = { "name": tempid, "notelist": title }
+        props.addNoteTitle(tempnote)
         
+        //{ "name": content, "notelist": [''] }
+       
     }
     return (
         <div className="div_area">
@@ -18,4 +30,7 @@ function TextArea() {
     )
 }
 
-export default TextArea
+export default connect(
+    null,
+    {addNoteTitle}
+)(TextArea);

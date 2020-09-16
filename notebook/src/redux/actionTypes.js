@@ -1,4 +1,6 @@
 export const INIT = "INIT";
-export const ADD = "ADD";
+export const ADDCATEGORY = "ADDCATEGORY";
+export const ADDNOTES = "ADDNOTES";
+export const ADDNOTETITLE = "ADDNOTETITLE";
 
 

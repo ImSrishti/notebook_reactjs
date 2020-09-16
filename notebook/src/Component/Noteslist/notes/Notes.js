@@ -1,25 +1,27 @@
 import React, { useState } from 'react'
 import './Notes.css'
-import {useParams,Link} from 'react-router-dom';
+import {useParams,Link, useRouteMatch} from 'react-router-dom';
 
-import { connect } from "react-redux";
+import { connect } from "react-redux"; 
 import { getNoteList } from "../../../redux/selectors";
 
-
+let tempid;
 
 function Notes(props) {
-    const [notes, setnotes] = useState('')
     let {id} = useParams();
-    let temp = Number(id) ? Number(id) : 0;
+    tempid =  id ? id : null  ;
+    let path = '/textarea/'+tempid
+   let { url } = useRouteMatch();
     return ( 
         <div className="notes-flex">
         <div className="notes">
-           <Link to="/textarea" >Add note</Link>
+           <Link to={path}>Add note</Link>
+           {/* <Link to={`${url}/rendering`}>Rendering with React</Link> */}
         </div>
-          { 
-        props.noteList.map(note => 
+            { tempid && props.noteList ?
+        props.noteList[tempid].map(note => 
             <div key={note} className="notes">{note}</div>
-         ) }
+         ) : null}
         
         </div>
     )
