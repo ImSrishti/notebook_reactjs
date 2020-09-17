@@ -14,10 +14,10 @@ export const getNoteList = (state) => {
   
   let notesArray = {};
   for(let a in state.notebook.data){
-    debugger
+    
     notesArray = {
       ...notesArray,
-      [state.notebook.data[a].name] : state.notebook.data[a].name.notelist
+      [state.notebook.data[a].name] : state.notebook.data[a].notelist
       
     }
   }

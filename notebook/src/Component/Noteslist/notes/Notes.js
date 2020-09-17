@@ -20,7 +20,7 @@ function Notes(props) {
         </div>
             { tempid && props.noteList ?
         props.noteList[tempid].map(note => 
-            <div key={note} className="notes">{note}</div>
+            <div key={note} className="notes">{note.title}</div>
          ) : null}
         
         </div>

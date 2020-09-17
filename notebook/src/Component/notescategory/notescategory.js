@@ -13,6 +13,7 @@ function NotesCategory(props) {
 
     useEffect(() => {
         //database read
+        
         database.ref('notebook').once('value').then(function (snapshot) {
             const data = snapshot.val()
             props.initialize(data)
