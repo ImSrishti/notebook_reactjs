@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './Notescategory.css'
 import database from '../../database/firebase'
 
 import { addCategory,initialize } from '../../redux/actions'
@@ -37,13 +37,13 @@ function NotesCategory(props) {
     
     return (
         <div>
-            <div>
-                <input value={categoryInput} onChange={e=>setcategoryInput(e.target.value)}/>
-                <button onClick={e=>props.addCategory(categoryInput)}>Add</button>
+            <div className="addtopic">
+                <input className="inputBox" value={categoryInput} onChange={e=>setcategoryInput(e.target.value)}/>
+                <button className="addtopicButton" onClick={e=>props.addCategory(categoryInput)}>Add</button>
             </div>
             <ul>
                 { props.noteCategoryList.map((x,i) =>(
-                <li key={i}>
+                <li key={i} className="topic">
                     <Link to={'/notescategory/'+ x}> {x}</Link>
                 </li>
                 ))}

@@ -1,0 +1,33 @@
+.topic{
+    border: 1px solid  rgb(233, 119, 233);
+    margin: 5px;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+ul{
+    margin : 0px;
+    padding: 0px;
+}
+.inputBox{
+    border: 1px solid  rgb(233, 119, 233);
+    padding:10px;
+    display: flex;
+    flex:0.70;
+}
+.addtopicButton{
+    border: 1px solid  rgb(233, 119, 233);
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex:0.30;
+}
+.addtopic{
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
